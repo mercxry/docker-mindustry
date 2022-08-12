@@ -47,3 +47,11 @@ Configuration for the server can be modified by using commands in the console, t
 ### Auto host
 
 To automatically run the command `host` when starting the server, just run `startCommands host` and the server will host a game the next time you start the container (as long as you keep the same `settings.bin` file).
+
+## Tagging
+
+There are two types of container tags used on this image: `latest` and `stable`; these are in addition to the specific version of the server which can always be picked instead and are **recommended**.
+
+In case specific versions are too granular for you, I would recommend to use `stable` instead of `latest` if you are looking for the **latest stable** version of the image, which will likely run the same version of the game client that you start from Steam.
+
+The `latest` tag instead runs the **latest pre-release** version that you can find on the [Github releases page](https://github.com/Anuken/Mindustry/releases) of the game, run this version of the image only if you are sure that you're using the latest pre-release game client.
