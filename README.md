@@ -12,7 +12,7 @@ docker run -d \
   -p 6567:6567/tcp -p 6567:6567/udp \
   -v /path/to/config:/mindustry/config \
   --restart unless-stopped \
-  mercxry/mindustry:latest
+  mercxry/mindustry:stable
 ```
 
 ### Docker compose (recommended)
@@ -22,7 +22,7 @@ docker run -d \
 version: "3.8"
 services:
   mindustry:
-    image: mercxry/mindustry:latest
+    image: mercxry/mindustry:stable
     container_name: mindustry
     volumes:
       - /path/to/config:/config
