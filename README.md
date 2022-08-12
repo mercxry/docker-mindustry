@@ -55,3 +55,5 @@ There are two types of container tags used on this image: `latest` and `stable`;
 In case specific versions are too granular for you, I would recommend to use `stable` instead of `latest` if you are looking for the **latest stable** version of the image, which will likely run the same version of the game client that you start from Steam.
 
 The `latest` tag instead runs the **latest pre-release** version that you can find on the [Github releases page](https://github.com/Anuken/Mindustry/releases) of the game, run this version of the image only if you are sure that you're using the latest pre-release game client.
+
+TESTING!!
