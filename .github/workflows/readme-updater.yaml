@@ -1,8 +1,8 @@
 name: Update docker hub readme
 on:
   push:
-    branches:
-      - 'main'
+    # branches:
+    #   - 'main'
     paths:
       - 'README.md'
       - '.github/workflows/readme-updater.yaml'
