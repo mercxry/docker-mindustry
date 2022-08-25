@@ -2,18 +2,11 @@ FROM alpine:3.16.2
 
 ARG VERSION
 
-ENV PUID=1000
-ENV GUID=1000
 ENV SERVER_PATH=/mindustry
 
-RUN echo "=== Install Java 8 ===" && \
-    apk add --no-cache openjdk8-jre && \
-    echo "=== Create server directory ===" && \
-    mkdir -p ${SERVER_PATH} && \
-    echo "=== Download game ===" && \
-    wget https://github.com/Anuken/Mindustry/releases/download/${VERSION}/server-release.jar -O ${SERVER_PATH}/server-release.jar
-
-USER ${PUID}:${GUID}
+RUN mkdir -p ${SERVER_PATH} && \
+    apk add --no-cache openjdk8-jre=8.345.01-r0 && \
+    wget -q https://github.com/Anuken/Mindustry/releases/download/${VERSION}/server-release.jar -O ${SERVER_PATH}/server-release.jar
 
 VOLUME ${SERVER_PATH}/config
 WORKDIR ${SERVER_PATH}
