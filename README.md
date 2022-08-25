@@ -12,7 +12,7 @@ Mindustry is a hybrid tower-defense sandbox factory game. Create elaborate suppl
 ### Docker cli
 
 ```sh
-docker run -d \
+docker run -it -d \
   --name mindustry \
   -p 6567:6567/tcp -p 6567:6567/udp \
   -v /path/to/config:/mindustry/config \
@@ -29,6 +29,8 @@ services:
   mindustry:
     image: mercxry/mindustry:stable
     container_name: mindustry
+    stdin_open: true
+    tty: true
     volumes:
       - /path/to/config:/config
     ports:
@@ -51,7 +53,13 @@ Configuration for the server can be modified by using commands in the console, t
 
 ### Auto host
 
-To automatically run the command `host` when starting the server, just run `startCommands host` and the server will host a game the next time you start the container (as long as you keep the same `settings.bin` file).
+To automatically run the command `host` when starting the server, just run:
+
+```sh
+config startCommands host
+```
+
+The server will host a game the next time you start the container (as long as you keep the same `settings.bin` file).
 
 ## Tagging
 
